@@ -1,6 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react"
 
+
+import heartActive from "../img/heartActive.svg"
+import heartUnactive from "../img/heartUnactive.png"
+import checked from "../img/checked.svg"
+import btnPlus from "../img/btnPlus.svg"
+
 function Card(props) {
    
 
@@ -24,7 +30,7 @@ function Card(props) {
     return(
     <div className="card" >
         <div className="card__favorite" onClick={props.onClickFavorite}>
-            <img onClick={handleOnClickFavorite} src= {isFavorite ?   '/img/heartActive.svg': '/img/heartUnactive.png'}   alt="" />
+            <img onClick={handleOnClickFavorite} src= {isFavorite ?  { heartActive} : {heartUnactive}}   alt="" />
         </div>
         <img src={props.imageUrl} alt="" width={133} height={112} />
         <h5>{props.title}</h5>
@@ -33,7 +39,7 @@ function Card(props) {
                 <span>Цена:</span>
                 <b>{props.price}</b>
             </div>
-            <img className="Plus" src={isAdded ? '/img/checked.svg': '/img/btnPlus.svg' } onClick={handleOnClickPlus}  width={32} height={32} alt="" />
+            <img className="Plus" src={isAdded ? checked: btnPlus } onClick={handleOnClickPlus}  width={32} height={32} alt="" />
         </div>
     </div>
     );

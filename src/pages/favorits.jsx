@@ -6,7 +6,6 @@ function Favorits(props) {
             <div className="content__header">
                 <h1 >Мои закладки</h1>
             </div>
-
             <div className="sneakers">
                 { 
                     props.items.map(obj =>
@@ -22,8 +21,6 @@ function Favorits(props) {
      
         </div>
     )
-
-
 }
 
 export default Favorits;

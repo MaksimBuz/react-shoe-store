@@ -1,15 +1,21 @@
+import cartEmpty from "../img/cartEmpty.png"
+
+import arrowL from "../img/arrowL.png"
+import cartBtnRemove from "../img/cartBtnRemove.svg"
+import arrowR from "../img/arrowR.svg"
+
 function Drawer({ onClose, items = [], onRemove }) {
     return (
         <div className="overlay">
             <div className="drawer">
-                <h2 className="mb-30">Корзина  <img className="RemoveBtn" onClick={onClose} src="/img/cartBtnRemove.svg" alt="Remove" /></h2>
+                <h2 className="mb-30">Корзина  <img className="RemoveBtn" onClick={onClose} src="" alt="Remove" /></h2>
                 {(items.length == 0) ?
                 
                 <div>
-                    <img src="/img/cartEmpty.png" alt="" />
+                    <img src={cartEmpty } alt="" />
                     <h2>Корзина пустая</h2>
                     <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-                    <button className="greenBtn "  onClick={onClose}><img src="/img/arrowL.png" alt=""  />Вернуться назад</button>
+                    <button className="greenBtn "  onClick={onClose}><img src={arrowL} alt=""  />Вернуться назад</button>
                 </div> :
                     <div>
                         <div className="items">
@@ -21,7 +27,7 @@ function Drawer({ onClose, items = [], onRemove }) {
                                         <p className="mb-5">{obj.name}</p>
                                         <b>{obj.price}</b>
                                     </div>
-                                    <img className="RemoveBtn" src="/img/cartBtnRemove.svg" alt="Remove" onClick={() => onRemove(obj.id)} />
+                                    <img className="RemoveBtn" src={cartBtnRemove} alt="Remove" onClick={() => onRemove(obj.id)} />
                                 </div>
                             ))}
 
@@ -43,7 +49,7 @@ function Drawer({ onClose, items = [], onRemove }) {
                                     <b>1074 руб.</b>
                                 </li>
                             </ul>
-                            <button className="greenBtn" >Оформить заказ <img src="/img/arrowR.svg" alt="" /></button>
+                            <button className="greenBtn" >Оформить заказ <img src= {arrowR} alt="" /></button>
                         </div>
                     </div>
 
